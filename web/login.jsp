@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="background-image: url(a.jpg); background-size: cover">
+	<center>
+		<div class="central-div">
+			<form method='post' action="controller.jsp">
+                             <input type="hidden" name="page" value="login"> 
+				<table>
+					<tr>
+						<td colspan="2">
+							<center><h2>Login Form</h2></center>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Username</label>
+						</td>
+						<td>
+                                                    <input type="text" class="text" placeholder="Username" name="username">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label>Password</label>
+						</td>
+						<td>
+                                                    <input type="password" class="text" placeholder="Password" name="password">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+							<%
+								if(request.getSession().getAttribute("userStatus")!=null){
+									//System.out.println("called");
+							  if(request.getSession().getAttribute("userStatus").equals("-1")){
+								  //System.out.println("inside");
+							%>
+								<p style="color: rgba(255, 255, 51, 1);font-size: 17px">Username or password is incorrect</p>
+							<br>
+							<%
+							  }
+								}
+								  %>
+                                                   <!-- <a href="">Forgot Passowrd</a></td> -->
+					</tr>
+					<tr>
+						<td>
+						</td>
+						<td>
+							<center>
+							<input type="submit" value="Login" class="button">
+							</center>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</center>
+</body>
+</html>
